@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ddiyoung-x4.github.io/sitemap.xml

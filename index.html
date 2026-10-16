@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seunghun Kang</title>
+<meta name="description" content="Seunghun Kang is a Ph.D. student at Ajou University researching vision models for medical imaging, vision-language models, and physical AI.">
+<link rel="canonical" href="https://ddiyoung-x4.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Seunghun Kang">
+<meta property="og:title" content="Seunghun Kang — AI Researcher">
+<meta property="og:description" content="Research in medical imaging, vision-language models, and physical AI.">
+<meta property="og:url" content="https://ddiyoung-x4.github.io/">
+<!-- TODO: enable once images/profile.jpg is added
+<meta property="og:image" content="https://ddiyoung-x4.github.io/images/profile.jpg">
+<meta property="og:image:alt" content="Portrait of Seunghun Kang">
+<meta name="twitter:image" content="https://ddiyoung-x4.github.io/images/profile.jpg">
+-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Seunghun Kang — AI Researcher">
+<meta name="twitter:description" content="Research in medical imaging, vision-language models, and physical AI.">
+<style>
+  :root {
+    --fs: 17px;
+    --bg: #fff;
+    --ink: #1d2433;       /* deep navy ink */
+    --muted: #5b6474;
+    --rule: #e2e5ea;
+    --link: #1f4f82;      /* oxford blue */
+    --link-soft: #9db4cf;
+    --tag: #a0522d;       /* sienna */
+    --award: #a8741a;     /* old gold */
+    --hl: #f2f4f7;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { background: var(--bg); }
+
+  body {
+    margin: 0 auto;
+    padding: 72px 28px 120px;
+    max-width: 980px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Times New Roman", Times, "Liberation Serif", Tinos, serif;
+    font-size: var(--fs);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* every text element shares one size and one weight */
+  h1, h2, p, li, a, span, div {
+    font-size: var(--fs);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  h1, h2 { margin: 0; }
+
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+
+  a:hover { text-decoration-color: var(--link-soft); }
+
+  /* ---------- header ---------- */
+
+  header {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding-bottom: 28px;
+  }
+
+  .photo {
+    flex: 0 0 132px;
+    height: 168px;
+    border: 1px solid var(--rule);
+  }
+
+  /* photo file: site/images/profile.jpg */
+  img.photo {
+    object-fit: cover;
+    object-position: 50% 26%;   /* frame the face, not the poster */
+  }
+
+  .idline { margin-top: 2px; }
+
+  /* ---------- sections ---------- */
+
+  section { margin-top: 44px; }
+
+  section > h2 {
+    padding-bottom: 6px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--ink);
+    font-weight: 700;
+  }
+
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---------- lists ---------- */
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  li { margin-bottom: 10px; }
+  li:last-child { margin-bottom: 0; }
+
+  li ul { margin-top: 6px; }
+
+  /* dated entries: period | content, split by a rule */
+  ul.dated { list-style: none; padding-left: 0; }
+
+  ul.dated > li {
+    display: grid;
+    grid-template-columns: 19ch 1fr;
+    margin-bottom: 14px;
+  }
+
+  ul.dated .when { color: var(--muted); }
+
+  ul.dated .what {
+    border-left: 1px solid var(--rule);
+    padding-left: 16px;
+  }
+
+  ul.dated .what ul { margin-top: 4px; padding-left: 18px; }
+
+  /* News dates are short, so the rule sits closer in */
+  #news ul.dated > li { grid-template-columns: 9ch 1fr; }
+
+  .news-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 7px;
+    vertical-align: -2px;
+  }
+
+  .news-icon.award { color: var(--award); }
+  .news-icon.paper { color: var(--link); }
+
+  li li { margin-bottom: 2px; color: var(--muted); font-style: italic; }   /* detail lines */
+
+  .note { color: var(--muted); }
+
+  .legend { margin-top: 14px; font-style: italic; }
+
+  .tag { white-space: nowrap; color: var(--tag); }
+
+  a[href^="#"] { color: var(--tag); }        /* paper / project tags */
+
+  .pub:last-child { border-bottom: none; padding-bottom: 4px; }
+
+  /* jump targets */
+  :target { scroll-margin-top: 28px; }
+
+  .pub:target { background: var(--hl); }
+
+  span.tag:target {
+    background: var(--hl);
+    outline: 4px solid var(--hl);
+  }
+
+  /* ---------- publications ---------- */
+
+  .pub {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pub:first-of-type { padding-top: 4px; }
+
+  /* every figure occupies the same box; sources are pre-fitted to 960x740 */
+  .pub img {
+    width: 240px;
+    height: 185px;
+    display: block;
+    border: 1px solid var(--rule);
+    background: #fff;
+  }
+
+  /* stand-in until a figure is added to images/ */
+  .pub .fig {
+    width: 240px;
+    height: 185px;
+    border: 1px solid var(--rule);
+    background: var(--hl);
+  }
+
+  /* the text column is capped at the figure height */
+  .pub .body {
+    max-height: 185px;
+    overflow: hidden;
+  }
+
+  .pub .body p, .pub .body div, .pub .body span, .pub .body a { line-height: 1.5; }
+
+  .pub .meta { margin-bottom: 8px; }
+
+  .venue { color: var(--muted); }
+
+  .pub .me, b { font-weight: 700; }
+
+  .kw { color: var(--muted); font-style: italic; }
+
+  em { font-style: italic; font-weight: 400; }
+
+  a.ico {
+    display: inline-block;
+    vertical-align: -2px;
+    text-decoration: none;
+    color: var(--link);
+  }
+
+  a.ico + a.ico { margin-left: 4px; }
+
+  /* below this width the text column needs to grow past the figure */
+  @media (max-width: 900px) {
+    .pub .body { max-height: none; }
+  }
+
+  @media (max-width: 680px) {
+    body { padding: 44px 20px 80px; }
+    header { flex-direction: column; gap: 20px; }
+    .pub { grid-template-columns: 1fr; gap: 16px; }
+    /* stack the period above the entry so the text keeps the full width */
+    ul.dated > li, #news ul.dated > li { grid-template-columns: 1fr; }
+    ul.dated .what { border-left: none; padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <!-- TODO: add images/profile.jpg (portrait, about 132x168) and uncomment
+  <img class="photo" src="images/profile.jpg" width="132" height="168" alt="Seunghun Kang" decoding="async" fetchpriority="high">
+  -->
+  <div>
+    <h1>Seunghun Kang</h1>
+    <div class="idline">Ph.D. Student, Department of Artificial Intelligence</div>
+    <div>Ajou University, Suwon, Korea</div>
+    <div>seunghun.kang at ajou.ac.kr</div>
+    <div>
+      <a href="https://scholar.google.com/citations?user=GZ1DK5sAAAAJ&amp;hl=en">Google Scholar</a> ·
+      <a href="https://github.com/ddiyoung-x4">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/seunghun-kang-896800241">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <h2>About</h2>
+  <p>I am Seunghun Kang, a Ph.D. student in the Department of Artificial Intelligence at Ajou University in Suwon, Korea, where I am advised by <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a> in the <a href="https://mmai-laboratory.github.io/">Multi-Modal Artificial Intelligence Lab</a>. I joined the lab in September 2021 as an undergraduate research intern and moved into the doctoral program in September 2023.</p>
+</section>
+
+<section id="interests">
+  <p>I am interested in building vision models that adapt efficiently and reliably to the real world, from clinical scans to open-world recognition and embodied agents. My work spans three directions:</p>
+  <ul>
+    <li><b>Medical image analysis</b>: efficient volumetric recognition for 3D MRI and CT.</li>
+    <li><b>Vision-language models</b>: parameter-efficient transfer learning <a href="#p-recalcon">[C.1]</a> and test-time adaptation <a href="#p-ttc">[C.2]</a>.</li>
+    <li><b>Physical AI</b>: vision-language-action (VLA) models.</li>
+  </ul>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <ul class="dated">
+    <li>
+      <div class="when">Sep 2023 – present</div>
+      <div class="what"><em>Ph.D. Student</em> in Artificial Intelligence, Ajou University, Korea<div class="note">Advisor: Prof. Jongbin Ryu</div></div>
+    </li>
+    <li>
+      <div class="when">Mar 2017 – Aug 2023</div>
+      <div class="what"><em>B.S.</em> in Software and Computer Engineering, Ajou University, Korea<div class="note">GPA 4.1 / 4.5 (Major GPA 4.2 / 4.5)</div></div>
+    </li>
+    <li>
+      <div class="when">Sep 2022 – Feb 2023</div>
+      <div class="what"><em>Exchange Student</em>, Karlsruhe University of Applied Sciences, Germany</div>
+    </li>
+  </ul>
+</section>
+
+<section id="work">
+  <h2>Research Experience</h2>
+  <ul class="dated">
+    <li>
+      <div class="when">Sep 2021 – present</div>
+      <div class="what"><em>Student Researcher</em>, <a href="https://mmai-laboratory.github.io/">Multi-Modal Artificial Intelligence Lab</a>, Ajou University, Korea</div>
+    </li>
+    <li>
+      <div class="when">Jul 2021 – Aug 2021</div>
+      <div class="what"><em>Student Research Intern</em>, <a href="https://vestellalab.com/">Vestella Lab</a> / <a href="https://mtov.net/">MtoV</a>, Korea<div class="note">CCTV-based parking lot control system</div></div>
+    </li>
+  </ul>
+</section>
+
+<section id="news">
+  <h2>News</h2>
+  <ul class="dated">
+    <li>
+      <div class="when">Sep 2026</div>
+      <div class="what"><svg class="news-icon paper" viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M3 1.5h6l4 4v9H3zM9 1.5v4h4M5.2 10l1.5 1.5 3.4-3.4"/></svg>One paper accepted to NeurIPS 2026!
+      </div>
+    </li>
+    <li>
+      <div class="when">Sep 2026</div>
+      <div class="what"><svg class="news-icon paper" viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M3 1.5h6l4 4v9H3zM9 1.5v4h4M5.2 10l1.5 1.5 3.4-3.4"/></svg>One paper accepted to BMVC 2026!
+      </div>
+    </li>
+    <li>
+      <div class="when">Jun 2025</div>
+      <div class="what"><svg class="news-icon award" viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M5 2h6v3.5a3 3 0 0 1-6 0zM5 3H2.5v1.5A2.5 2.5 0 0 0 5 7M11 3h2.5v1.5A2.5 2.5 0 0 1 11 7M8 8.5V12M6.5 12h3M5.5 14h5"/></svg>Won <a href="https://lpcv.ai/2025LPCVC/winners/">IEEE Low-Power Computer Vision Challenge Track 1</a> at CVPR 2025!
+      </div>
+    </li>
+    <li>
+      <div class="when">Oct 2023</div>
+      <div class="what"><svg class="news-icon award" viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M5 2h6v3.5a3 3 0 0 1-6 0zM5 3H2.5v1.5A2.5 2.5 0 0 0 5 7M11 3h2.5v1.5A2.5 2.5 0 0 1 11 7M8 8.5V12M6.5 12h3M5.5 14h5"/></svg>Won a silver medal in the <a href="https://www.kaggle.com/competitions/rsna-2023-abdominal-trauma-detection">RSNA 2023 Abdominal Trauma Detection</a> Kaggle competition (56th of 1,125 teams)!
+      </div>
+    </li>
+    <!-- TODO: add once the result (rank/prize) is confirmed
+    <li>
+      <div class="when">Aug 2022</div>
+      <div class="what"><svg class="news-icon award" viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M5 2h6v3.5a3 3 0 0 1-6 0zM5 3H2.5v1.5A2.5 2.5 0 0 0 5 7M11 3h2.5v1.5A2.5 2.5 0 0 1 11 7M8 8.5V12M6.5 12h3M5.5 14h5"/></svg>Won RESULT in the Hyundai Motor AI Competition (engine crank stop-angle prediction using the starter motor)!
+      </div>
+    </li>
+    -->
+    <li>
+      <div class="when">Feb 2022</div>
+      <div class="what"><svg class="news-icon award" viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M5 2h6v3.5a3 3 0 0 1-6 0zM5 3H2.5v1.5A2.5 2.5 0 0 0 5 7M11 3h2.5v1.5A2.5 2.5 0 0 1 11 7M8 8.5V12M6.5 12h3M5.5 14h5"/></svg>Won 3rd place in the 2nd Big Data / AI Contest for Digital Innovation in Shipbuilding/Offshore Industry, Hyundai Heavy Industries Co., Ltd.!
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section id="publications">
+  <h2>Publications <span class="note">(C: conference, J: journal, S: submission or preprint)</span></h2>
+  <div class="pub" id="p-ttc">
+    <img src="images/ttc.webp" width="240" height="185" alt="Test-time correction that verifies top-2 candidate labels by the divergence shift of a memory bank" loading="lazy" decoding="async">
+    <div class="body">
+      <div class="meta"><span class="tag">[C.2]</span> Seungmin Oh, <span class="me">Seunghun Kang</span>, and Jongbin Ryu. <a href="https://arxiv.org/abs/2610.06147">Efficient Test-time Adaptation through Candidate Verification and Divergence Shifts</a>.<br><span class="venue">Advances in Neural Information Processing Systems (NeurIPS), 2026</span> <a class="ico" href="https://arxiv.org/pdf/2610.06147" title="PDF" aria-label="PDF"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M3.2 1.7h6.1l3.5 3.5v9.1H3.2z"/><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M9.3 1.7v3.5h3.5"/><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" d="M5.4 8.4h5.2M5.4 11h5.2"/></svg></a></div>
+      <p class="kw">Keywords: &ldquo;test-time adaptation, vision-language models, training-free adaptation, candidate verification, divergence shift, inference efficiency&rdquo;</p>
+    </div>
+  </div>
+
+  <div class="pub" id="p-recalcon">
+    <img src="images/recalcon.webp" width="240" height="185" alt="Transformation-aware prompts with an augmented contrastive space and adaptive re-calibration of the target" loading="lazy" decoding="async">
+    <div class="body">
+      <div class="meta"><span class="tag">[C.1]</span> Seungmin Oh, <span class="me">Seunghun Kang</span>, and Jongbin Ryu. <a href="https://arxiv.org/abs/2609.06967">Re-calibrated Contrastive Loss for Transformation-Aware Prompt Conditioning in Vision-Language Models</a>.<br><span class="venue">British Machine Vision Conference (BMVC), 2026</span> <a class="ico" href="https://arxiv.org/pdf/2609.06967" title="PDF" aria-label="PDF"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M3.2 1.7h6.1l3.5 3.5v9.1H3.2z"/><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M9.3 1.7v3.5h3.5"/><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" d="M5.4 8.4h5.2M5.4 11h5.2"/></svg></a> <a class="ico" href="https://github.com/SoongE/ReCalCon" title="Code" aria-label="Code"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 .5a7.5 7.5 0 0 0-2.37 14.62c.37.07.51-.16.51-.36v-1.3c-2.09.45-2.53-1-2.53-1-.34-.87-.83-1.1-.83-1.1-.68-.47.05-.46.05-.46.75.05 1.15.77 1.15.77.67 1.15 1.76.82 2.19.63.07-.49.26-.82.47-1.01-1.67-.19-3.430-.84-3.43-3.71 0-.82.29-1.49.77-2.02-.08-.19-.34-.95.07-1.98 0 0 .63-.2 2.06.77a7.1 7.1 0 0 1 3.75 0c1.43-.97 2.06-.77 2.06-.77.41 1.03.15 1.79.07 1.98.48.53.77 1.2.77 2.02 0 2.88-1.76 3.51-3.44 3.7.27.23.51.69.51 1.39v2.06c0 .2.13.44.51.36A7.5 7.5 0 0 0 8 .5z"/></svg></a></div>
+      <p class="kw">Keywords: &ldquo;vision-language models, prompt learning, parameter-efficient transfer learning, contrastive loss, distribution shift, few-shot learning&rdquo;</p>
+    </div>
+  </div>
+
+  <!-- Scientific Reports paper: hidden until published (TODO: authors, year, link, figure)
+  <div class="pub" id="p-alzheimer">
+    <div class="fig"></div>
+    <div class="body">
+      <div class="meta"><span class="tag">[J.1]</span> AUTHORS. Efficient Alzheimer&rsquo;s Disease Classification with Robust Rank Pooling.<br><span class="venue">Scientific Reports, YEAR</span></div>
+      <p class="kw">Keywords: &ldquo;Alzheimer&rsquo;s disease classification, 3D MRI, rank pooling, efficient volumetric recognition&rdquo;</p>
+    </div>
+  </div>
+  -->
+
+  <div class="pub" id="p-lpcvc">
+    <img src="images/lpcvc.webp" width="240" height="185" alt="Naive multi-layer model compressed into a merged layer using layer imitation" loading="lazy" decoding="async">
+    <div class="body">
+      <div class="meta"><span class="tag">[S.1]</span> Zihao Ye, &hellip;, Seungmin Oh, Hankyul Kang, <span class="me">Seunghun Kang</span>, Jongbin Ryu, et al. <a href="https://arxiv.org/abs/2604.19054">Evaluation of Winning Solutions of 2025 Low Power Computer Vision Challenge</a>.<br><span class="venue">arXiv preprint, 2026</span> <a class="ico" href="https://arxiv.org/pdf/2604.19054" title="PDF" aria-label="PDF"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M3.2 1.7h6.1l3.5 3.5v9.1H3.2z"/><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M9.3 1.7v3.5h3.5"/><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" d="M5.4 8.4h5.2M5.4 11h5.2"/></svg></a> <a class="ico" href="https://github.com/SoongE/LPCV2025_Track1_Winning_Solution" title="Code" aria-label="Code"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 .5a7.5 7.5 0 0 0-2.37 14.62c.37.07.51-.16.51-.36v-1.3c-2.09.45-2.53-1-2.53-1-.34-.87-.83-1.1-.83-1.1-.68-.47.05-.46.05-.46.75.05 1.15.77 1.15.77.67 1.15 1.76.82 2.19.63.07-.49.26-.82.47-1.01-1.67-.19-3.430-.84-3.43-3.71 0-.82.29-1.49.77-2.02-.08-.19-.34-.95.07-1.98 0 0 .63-.2 2.06.77a7.1 7.1 0 0 1 3.75 0c1.43-.97 2.06-.77 2.06-.77.41 1.03.15 1.79.07 1.98.48.53.77 1.2.77 2.02 0 2.88-1.76 3.51-3.44 3.7.27.23.51.69.51 1.39v2.06c0 .2.13.44.51.36A7.5 7.5 0 0 0 8 .5z"/></svg></a></div>
+      <p class="kw">Keywords: &ldquo;low-power computer vision, model compression, layer merging, layer imitation, mobile NPU&rdquo;</p>
+    </div>
+  </div>
+</section>
+
+<!-- Working Papers: hidden for now
+<section id="preprints">
+  <h2>Working Papers</h2>
+  <div class="pub" id="p-s1">
+    <div class="fig"></div>
+    <div class="body">
+      <div class="meta"><span class="tag">[S.1]</span> Anonymous Authors. TITLE.<br><span class="venue">Working paper</span></div>
+      <p class="kw">Keywords: &ldquo;...&rdquo;</p>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- Research Projects: hidden for now
+<section id="projects">
+  <h2>Research Projects</h2>
+  <ul class="dated">
+    <li>
+      <div class="when">Mon YYYY – Mon YYYY</div>
+      <div class="what"><span class="tag" id="p-p1">[P.1]</span> PROJECT TITLE<div class="note">SPONSOR</div></div>
+    </li>
+  </ul>
+</section>
+-->
+
+<!-- Academic Service: hidden for now
+<section id="service">
+  <h2>Academic Service</h2>
+  <p>Reviewer: ...</p>
+</section>
+-->
+
+</body>
+</html>
