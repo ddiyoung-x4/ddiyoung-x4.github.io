@@ -278,7 +278,7 @@
 <section id="interests">
   <p>I am interested in building AI models that work efficiently and reliably in the real world, from clinical scans and mobile devices to embodied agents and industrial systems. My work spans four directions:</p>
   <ul>
-    <li><b>Medical image analysis</b>: Alzheimer&rsquo;s disease classification from brain MRI and abdominal trauma detection from CT <a href="#p-a2">[A.2]</a>.</li>
+    <li><b>Medical image analysis</b>: Alzheimer&rsquo;s disease classification from brain MRI <a href="#p-alzheimer">[J.1]</a> and abdominal trauma detection from CT <a href="#p-a2">[A.2]</a>.</li>
     <li><b>Vision-language models</b>: parameter-efficient transfer learning <a href="#p-recalcon">[C.1]</a>, test-time adaptation <a href="#p-ttc">[C.2]</a>, and model compression for mobile NPUs <span class="tag">[<a href="#p-lpcvc">S.1</a>, <a href="#p-a3">A.3</a>]</span>.</li>
     <li><b>Physical AI</b>: vision-language-action (VLA) models.</li>
     <li><b>Industrial AI</b>: predictive modeling on industrial data for the automotive <a href="#p-p1">[P.1]</a> and shipbuilding <a href="#p-a1">[A.1]</a> industries.</li>
@@ -327,6 +327,11 @@
     </li>
     <li>
       <div class="when">Sep 2026</div>
+      <div class="what"><svg class="news-icon paper" viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M3 1.5h6l4 4v9H3zM9 1.5v4h4M5.2 10l1.5 1.5 3.4-3.4"/></svg>One paper accepted to Scientific Reports 2026!
+      </div>
+    </li>
+    <li>
+      <div class="when">Sep 2026</div>
       <div class="what"><svg class="news-icon paper" viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M3 1.5h6l4 4v9H3zM9 1.5v4h4M5.2 10l1.5 1.5 3.4-3.4"/></svg>One paper accepted to BMVC 2026!
       </div>
     </li>
@@ -366,15 +371,13 @@
     </div>
   </div>
 
-  <!-- Scientific Reports paper: hidden until published (TODO: authors, year, link, figure)
   <div class="pub" id="p-alzheimer">
-    <div class="fig"></div>
+    <img src="images/rrp.webp" width="240" height="185" alt="Robust rank pooling compresses sliding windows of a 3D brain MRI into 2D images and selects a robust set" loading="lazy" decoding="async">
     <div class="body">
-      <div class="meta"><span class="tag">[J.1]</span> AUTHORS. Efficient Alzheimer&rsquo;s Disease Classification with Robust Rank Pooling.<br><span class="venue">Scientific Reports, YEAR</span></div>
-      <p class="kw">Keywords: &ldquo;Alzheimer&rsquo;s disease classification, 3D MRI, rank pooling, efficient volumetric recognition&rdquo;</p>
+      <div class="meta"><span class="tag">[J.1]</span> <span class="me">Seunghun Kang</span>, Sungeun Kim, Hyun Woong Roh, Chang Hyung Hong, Sang Joon Son, and Jongbin Ryu. <a href="https://doi.org/10.1038/s41598-026-74059-5">Efficient Alzheimer&rsquo;s Disease Classification with Robust Rank Pooling</a>.<br><span class="venue">Scientific Reports, 2026</span> <a class="ico" href="https://www.nature.com/articles/s41598-026-74059-5_reference.pdf" title="PDF" aria-label="PDF"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M3.2 1.7h6.1l3.5 3.5v9.1H3.2z"/><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M9.3 1.7v3.5h3.5"/><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" d="M5.4 8.4h5.2M5.4 11h5.2"/></svg></a></div>
+      <p class="kw">Keywords: &ldquo;Alzheimer&rsquo;s disease classification, brain MRI, robust rank pooling, 3D-to-2D compression, dynamic images, efficient inference&rdquo;</p>
     </div>
   </div>
-  -->
 
   <div class="pub" id="p-lpcvc">
     <img src="images/lpcvc.webp" width="240" height="185" alt="Naive multi-layer model compressed into a merged layer using layer imitation" loading="lazy" decoding="async">
