@@ -20,6 +20,10 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Seunghun Kang — AI Researcher">
 <meta name="twitter:description" content="Research in medical image analysis, vision-language models, physical AI, and industrial AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- only the glyphs of the Korean name are downloaded -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400&amp;text=%28%EA%B0%95%EC%8A%B9%ED%9B%88%29&amp;display=swap" rel="stylesheet">
 <style>
   :root {
     --fs: 17px;
@@ -59,6 +63,9 @@
   }
 
   h1, h2 { margin: 0; }
+
+  /* Times has no Hangul; a web font keeps the Korean name the same on every OS */
+  :lang(ko) { font-family: "IBM Plex Sans KR", sans-serif; }
 
   a {
     color: var(--link);
@@ -251,7 +258,7 @@
   <img class="photo" src="images/profile.jpg" width="132" height="168" alt="Seunghun Kang" decoding="async" fetchpriority="high">
   -->
   <div>
-    <h1>Seunghun Kang</h1>
+    <h1>Seunghun Kang <span lang="ko">(강승훈)</span></h1>
     <div class="idline">Ph.D. Student, Department of Artificial Intelligence</div>
     <div>Ajou University, Suwon, Korea</div>
     <div>seunghun.kang at ajou.ac.kr</div>
